@@ -7,7 +7,7 @@ import "./custom.scss"
 function App() {
   return (  
     <div className="App"> 
-      <Container className="text-center">
+      <Container fluid="md" className="text-center ">
         <Row className="justify-content-center">
           <Col xs={8} className="bg-dark text-light rounded p-2">
             <h1 className="fw-bold">Random Quote Generator</h1>

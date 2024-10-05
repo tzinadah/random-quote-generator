@@ -3,6 +3,7 @@ import { useState } from "react";
 import QUOTES from "./quotes"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import Button from "react-bootstrap/Button"
 
 function QuoteDisplay(props){
     
@@ -18,18 +19,31 @@ function QuoteDisplay(props){
 
     return (
         <div id="quote-box" className="quote-display">
-            <p id="text">
-                {quote.text}
-            </p>
-            <p id="author">
-                <em>{quote.author}</em>
-            </p>
-            <button id="new-quote" onClick={displayNewQuote}>New Quote</button>
-            <a 
-            id="tweet-quote" 
-            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`"${quote.text}"\n\u2014${quote.author}`)}`}
-                 target="_blank"rel="noreferrer"><button>Tweet Quote</button>
-            </a>
+            <Row>
+                <Col className="text-start" style={{ textAlign: 'justify' }}>
+                    <h3 id="text" className="fw-bold quote-block">
+                    {quote.text}
+                    </h3>
+                </Col>                    
+            </Row>
+            <Row>
+                <h5 id="author">
+                    <em>{quote.author}</em>
+                </h5>
+            </Row>
+            <Row className="justify-content-center mt-2">
+                <Col xs={5}>
+                    <Button variant="secondary" id="new-quote" className="text-light" onClick={displayNewQuote}>New Quote</Button>
+                </Col>
+                <Col xs={5}>
+                    <a 
+                    id="tweet-quote" 
+                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`"${quote.text}"\n\u2014${quote.author}`)}`}
+                        target="_blank"rel="noreferrer">
+                            <Button variant="info" className="text-dark">Tweet Quote</Button>
+                    </a>
+                </Col>
+            </Row>
         </div>
     )
 }
