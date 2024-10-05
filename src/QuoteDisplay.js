@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 
 function QuoteDisplay(props){
 
@@ -45,16 +45,26 @@ function QuoteDisplay(props){
         }
     ];
 
-    let {text , author} = quotes[0]
-    
+    const [quote, setQuote] = useState(quotes[0]);
+
+    function displayNewQuote(){
+        let newQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        while(newQuote.text === quote.text){
+            newQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        }
+        setQuote(newQuote)
+    }
+
     return (
         <div id="quote-box">
             <p id="text">
-                {text}
+                {quote.text}
             </p>
-            <div id="author">
-                <em>{author}</em>
-            </div>
+            <p id="author">
+                <em>{quote.author}</em>
+            </p>
+            <button id="#new-quote" onClick={displayNewQuote}>New quote</button>
+            <a id="tweet-quote" href="twitter.com/intent/tweet" target="_blank">tweet quote</a>
         </div>
     )
 }
