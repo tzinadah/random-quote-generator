@@ -68,7 +68,7 @@ function QuoteDisplay(props){
             <a 
             id="tweet-quote" 
             href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`"${quote.text}"\n\u2014${quote.author}`)}`}
-                 target="_blank"><button>Tweet Quote</button>
+                 target="_blank"rel="noreferrer"><button>Tweet Quote</button>
             </a>
         </div>
     )
