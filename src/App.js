@@ -1,8 +1,9 @@
+import QuoteDisplay from "./QuoteDisplay";
 
 function App() {
   return (
     <div>
-      <h1>Hello World</h1>
+      <QuoteDisplay />
     </div>
   );
 }
