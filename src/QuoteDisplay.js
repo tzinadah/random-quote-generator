@@ -1,3 +1,4 @@
+import "./QuoteDisplay.css"
 import { useState } from "react";
 
 function QuoteDisplay(props){
@@ -56,14 +57,14 @@ function QuoteDisplay(props){
     }
 
     return (
-        <div id="quote-box">
+        <div id="quote-box" className="quote-display">
             <p id="text">
                 {quote.text}
             </p>
             <p id="author">
                 <em>{quote.author}</em>
             </p>
-            <button id="#new-quote" onClick={displayNewQuote}>New Quote</button>
+            <button id="new-quote" onClick={displayNewQuote}>New Quote</button>
             <a 
             id="tweet-quote" 
             href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`"${quote.text}"\n\u2014${quote.author}`)}`}
