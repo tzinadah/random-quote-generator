@@ -63,8 +63,12 @@ function QuoteDisplay(props){
             <p id="author">
                 <em>{quote.author}</em>
             </p>
-            <button id="#new-quote" onClick={displayNewQuote}>New quote</button>
-            <a id="tweet-quote" href="twitter.com/intent/tweet" target="_blank">tweet quote</a>
+            <button id="#new-quote" onClick={displayNewQuote}>New Quote</button>
+            <a 
+            id="tweet-quote" 
+            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`"${quote.text}"\n\u2014${quote.author}`)}`}
+                 target="_blank"><button>Tweet Quote</button>
+            </a>
         </div>
     )
 }
